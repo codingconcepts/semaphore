@@ -1,6 +1,8 @@
 # semaphore
 A very simple semaphore using channels.
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/codingconcepts/semaphore)](https://goreportcard.com/report/github.com/codingconcepts/semaphore) [![Build Status](https://travis-ci.org/codingconcepts/semaphore.svg?branch=master)](https://travis-ci.org/codingconcepts/semaphore)
+
 ## Installation
 ``` bash
 go get -u -d github.com/codingconcepts/semaphore
