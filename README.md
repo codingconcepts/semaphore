@@ -1,5 +1,5 @@
 # semaphore
-A very basic semaphore using channels.
+A very simple semaphore using channels.
 
 ## Installation
 ``` bash

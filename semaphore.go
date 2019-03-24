@@ -15,8 +15,11 @@ func New(concurrency int) (s *Semaphore) {
 
 // Run executes a function, blocking if N operations are executing.
 func (s *Semaphore) Run(f func()) {
+	// Try to add to the channel and block if it's full.
 	s.c <- struct{}{}
 
+	// Ensure to read off an item from the channel once we're done,
+	// then execute the given function in a separate goroutine.
 	go func() {
 		defer func() {
 			<-s.c
