@@ -31,6 +31,11 @@ func (s *semaphore) Run(f func()) {
 
 // Wait ensures that all N operations are completed, by filling the
 // channel.  This will block until all N operations are complete.
+//
+// This method assumes you're in control of the operations you're
+// kicking off and are running after having kicked them all off.
+// If you call this part way through your operations, there's no
+// guaranteeing all of the operations would have finished.
 func (s *semaphore) Wait() {
 	// Fill the channel with empty structs, ensuring that there are
 	// no existing operations running, as these would need to finish
