@@ -14,7 +14,7 @@ The following example kicks off 1,000,000 goroutines, each of which increment a 
 ``` go
 sum := int64(0)
 
-sem := New(10)
+sem := semaphore.New(10)
 for i := 0; i < 1000000; i++ {
 	sem.Run(func() {
 		atomic.AddInt64(&sum, 1)
